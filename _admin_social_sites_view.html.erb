@@ -1,0 +1,61 @@
+<div>
+	<span >
+		<table width="100%">
+			<% @social_sites.each do |site| %>
+				<tr>
+					<th width="10%" style="color:#8C8C8C"><%= artist = site.artist.name  %></th>
+
+					<% if site.facebook.present? %>
+						<th><a target="_blank", href = <%= site.facebook %> ><img height = "64px" width="64px"  src="/images/0313/facebook-color.png" alt="facebook"></th>
+					<% else %>
+						<th><img height = "64px" width="64px"  src="/images/0313/facebook-gray.png" alt="facebook"></a></th>
+					<% end %>					   
+
+					<% if site.bandcamp.present? %>
+						<th ><a target="_blank", href = <%= site.bandcamp %> ><img height = "64px" width="64px" src="/images/0313/bandcamp-color.png" alt="bandcamp"></a></th>
+					<%else%>
+						<th ><img height = "64px" width="64px" src="/images/0313/bandcamp-gray.png" alt="bandcamp"></th>
+					<%end%>
+					
+					<% if site.soundcloud.present?%>
+						<th ><a target="_blank", href = <%= site.soundcloud %> ><img height = "64px" width="64px" src="/images/0313/soundcloud-color.png" alt="soundcloud" height="" width="10%"></a></th>
+					<%else%>
+						<th ><img height = "64px" width="64px" src="/images/0313/soundcloud-gray.png" alt="soundcloud" height="" width="10%"></th>
+					<%end%>
+
+					<% if site.twitter.present?%>
+						<th ><a target="_blank", href = <%= site.twitter %> ><img height = "64px" width="64px" src="/images/0313/twitter-color.png" alt="twitter" ></a></th>
+					<%else%>
+						<th ><img height = "64px" width="64px" src="/images/0313/twitter-gray.png" alt="twitter" ></th>
+					<%end%>
+					
+					<% if site.instagram.present?%>
+						<th ><a target="_blank", href = <%= site.instagram %> ><img height = "64px" width="64px" src="/images/0313/instagram-color.png" alt="youtube" height="" width="10%"></a></th>
+					<%else%>
+						<th ><img height = "64px" width="64px" src="/images/0313/instagram-gray.png" alt="youtube" height="" width="10%"></th>
+					<%end%>
+
+					<% if true %>
+						<th ><a target="_blank", href = "show_youtube_sites" ><img height = "64px" width="64px" src="/images/0313/youtube-color.png" alt="instagram" ></a></th>
+					<%else%>
+						<th ><img height = "64px" width="64px" src="/images/0313/youtube-gray.png" alt="instagram" ></th>
+					<%end%>
+					
+					<% if site.spotify.present?%>
+						<th ><a target="_blank", href = <%= site.spotify %> ><img height = "64px" width="64px" src="/images/0313/spotify-color.jpg" alt="spotify" ></a></th>
+					<%else%>
+						<th ><img height = "64px" width="64px" src="/images/0313/spotify-color.jpg" alt="spotify" ></th>
+					<%end%>
+					
+					<% if site.vine.present?%>
+						<th ><a target="_blank", href = <%= site.vine %> ><img height = "64px" width="64px" src="/images/0313/vine-color.png" alt="vine" ></a></th>
+					<%else%>
+						<th ><img height = "64px" width="64px" src="/images/0313/vine-gray.png" alt="vine" ></th>
+					<%end%>
+					<th width="5%"><a href="social_sites_edit/<%= site.id %>" ><button type="button">Edit</button></a></th>
+			<!--	<th width="10%" ><%= link_to '<button type="button">Edit</button>'.html_safe, {:action => "social_sites_edit"}, {:method => :put } %></th>-->
+				</tr>
+		  <% end %>
+		</table>
+	</span>
+</div>

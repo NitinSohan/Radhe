@@ -1,0 +1,33 @@
+<div id="content_bar">
+<div class="leftCorner"></div>
+<div class="content_bar">
+	<div class="content_bar_ul">
+
+	<%# @youtube.each do |site| %>
+		<span class="tab_font_format"><%#= artist = site.artist.name %></span>
+	<%#end%>
+	</div>
+</div>
+<div class="rightCorner"></div>
+</div>
+<div class="main_content">
+<div class="content_tabs">
+	<li align="right">
+		<% form_tag  :action => "show_youtube_sites",:method => "get" do %>
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Search",:name => nil %>
+	<% end %></li>
+	
+</div>
+<span class="blueStripBg accordian_strip member_tab_strip" style="padding-left:16px;">
+	<table width="100%">
+		<tr>
+			<td width="40%" align="left" style="padding-left:0;">Youtube</td>
+			<td width="50%" align="left" style="padding-left:23px;">URL</td>
+			<td width="10%" align="left" style="padding-left:23px;">Edit</td>
+		</tr>
+	</table>
+</span>
+<span>
+	<%= render :partial => 'admin_youtube_sites_view' %>
+</span>

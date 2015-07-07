@@ -1,0 +1,53 @@
+  <%= form_for(@social_site, :url =>media_url(:action => 'social_site_update', :id => social_site, :artist => artist), :html => {:multipart => true}) do |f| %>
+    <div class="member_detail" style="clear:both">
+      <div id = "error_message_for_album_details"></div>
+      <table width="100%" class="member_detail_table">
+        <tr>
+            <td class="left_td"><%= f.label :facebook, 'Facebook:' %></td>
+            <td class="right_td"><%= f.text_field :facebook %></td>
+        </tr>
+
+        <tr>
+            <td class="left_td"><%= f.label :bandcamp, 'Bandcamp:' %></td>
+            <td class="right_td"><%= f.text_field :bandcamp %></td>
+        </tr>
+        
+        <tr>
+            <td class="left_td"><%= f.label :soundcloud, 'Soundcloud:' %></td>
+            <td class="right_td"><%= f.text_field :soundcloud %></td>
+        </tr>
+        
+        <tr>
+            <td class="left_td"><%= f.label :twitter, 'Twitter:' %></td>
+            <td class="right_td"><%= f.text_field :twitter %></td>
+        </tr>
+        
+        <tr>
+            <td class="left_td"><%= f.label :instagram, 'Instagram:' %></td>
+            <td class="right_td"><%= f.text_field :instagram %></td>
+        </tr>
+        
+        <tr>
+            <td class="left_td"><%= f.label :youtube, 'Youtube:' %></td>
+            <td class="right_td"><%= f.text_field :youtube %></td>
+        </tr>
+        
+        <tr>
+            <td class="left_td"><%= f.label :spotify, 'Spotify:' %></td>
+            <td class="right_td"><%= f.text_field :spotify %></td>
+        </tr>
+        
+        <tr>
+            <td class="left_td"><%= f.label :vine, 'Vine:' %></td>
+            <td class="right_td"><%= f.text_field :vine %></td>
+        </tr>
+        
+        </table>
+      <div class="action" style="text-align: center;">
+        <%#= submit_tag 'Save', :class => 'button metadata_form_save',:onclick => "validateattachdeal()"%>
+        <button id='save_album' class ='button metadata_form_save'>Save</button>
+        <span class="cancel">or <%= link_to 'Cancel', '#'+album_meta_id(album), :rel => 'cancel' , :class=>"orange_text", :onclick=>'showmetadataView()' %></span>
+      </div>
+    </div>
+</div>
+

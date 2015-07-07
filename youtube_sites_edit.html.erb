@@ -1,0 +1,54 @@
+<style>
+  .artist_table td{
+    padding-left:5px;
+  }
+  .enlarge_title{
+    color:white !important
+  }
+</style>
+<div id="content_bar">
+  <div class="leftCorner"></div>
+  <div class="content_bar" align="left">
+    <ul class="content_bar_ul">
+      <li class="priority_strip"><h3 class="enlarge_title"> <b>SOCIAL SITES</b> </h3></li>
+    </ul>
+  </div>
+  <div class="rightCorner"></div>
+<div class="leftCorner"></div>
+  <div class="content_bar" align="left">
+  <ul class="content_bar_ul">
+    <li class="social_site_strip" style="text-align:center;"><b>Artists</b></li>
+    <li class="social_site_strip" style="text-align:right;"><b>Facebook</b></li>
+    <li class="social_site_strip" style="text-align:right;"><b>Bandcamp</b></li>
+    <li class="social_site_strip" style="text-align:right;"><b>Soundcloud</b></li>
+    <li class="social_site_strip" style="text-align:right;"><b>Twitter</b></li>
+    <li class="social_site_strip" style="text-align:right;"><b>Instagram</b></li>
+    <li class="social_site_strip" style="text-align:right;"><b>Youtube</b></li>
+    <li class="social_site_strip" style="text-align:right;"><b>Spotify</b></li>
+    <li class="social_site_strip" style="text-align:center;"><b>Vine</b></li>
+    <li style="padding-top:13px;font-size:12px;font-weight:bold;color:#ffffff;width: 24px;"><b>Edit</b></li>
+  </ul>
+  </div>
+  <div class="rightCorner"></div>
+<div class="edit box" style="margin-top:0px !important;">
+<%= form_for @youtube, :url=>{:action => "youtube_sites_update"} do |f| %>
+
+  <div class="member_detail" style="clear:both">
+    <div id = "error_message_for_album_details"></div>
+    <table width="100%" class="member_detail_table">
+      <tr>
+        <td class="left_td"><%= f.label :youtube_channel, 'Youtube:' %></td>
+        <td class="right_td"><%= f.text_field :youtube_channel %></td>
+      </tr>
+      <%= f.hidden_field "artist_name", :value => params[:artist] %>
+       <%= f.hidden_field "id", :value => params[:id] %>
+      <tr>
+        <th align = "center" colspan = "3" valign="middle">
+          <span><%= f.submit 'Save' %></span>or
+          <%= link_to 'Cancel', {:action => 'index'},  :class => "orange_text"%> 
+        </th>
+      </tr>
+    </table>
+  </div>
+<% end %>
+</div>

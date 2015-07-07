@@ -1,0 +1,45 @@
+<%= form_for @social_sites,:url=>{:action => "social_sites_update"} do |f| %>
+  <div class="member_detail" style="clear:both">
+    <div id = "error_message_for_album_details"></div>
+    <table width="100%" class="member_detail_table">
+      <tr>
+        <td class="left_td"><%= f.label :facebook, 'Facebook:' %></td>
+        <td class="right_td"><%= f.text_field :facebook %></td>
+      </tr>
+      <tr>
+        <td class="left_td"><%= f.label :bandcamp, 'Bandcamp:' %></td>
+        <td class="right_td"><%= f.text_field :bandcamp %></td>
+      </tr>
+      <tr>
+        <td class="left_td"><%= f.label :soundcloud, 'Soundcloud:' %></td>
+        <td class="right_td"><%= f.text_field :soundcloud %></td>
+      </tr>
+      <tr>
+        <td class="left_td"><%= f.label :twitter, 'Twitter:' %></td>
+        <td class="right_td"><%= f.text_field :twitter %></td>
+      </tr>
+      <tr>
+        <td class="left_td"><%= f.label :instagram, 'Instagram:' %></td>
+        <td class="right_td"><%= f.text_field :instagram %></td>
+      </tr>
+
+      <tr>
+        <td class="left_td"><%= f.label :spotify, 'Spotify:' %></td>
+        <td class="right_td"><%= f.text_field :spotify %></td>
+      </tr>
+      <tr>
+        <td class="left_td"><%= f.label :vine, 'Vine:' %></td>
+        <td class="right_td"><%= f.text_field :vine %></td>
+      </tr>
+      <%= f.hidden_field "artist_name", :value => params[:artist] %>
+      <%= f.hidden_field "id", :value => params[:id] %>
+      <tr>
+        <th align = "center" colspan = "3" valign="middle">
+          <span><%= f.submit 'Save' %></span>or
+          <%= link_to 'Cancel', {:action => 'index'},  :class => "orange_text"%> </th>
+      </tr>
+    </table>
+  </div>
+<% end %>
+
+

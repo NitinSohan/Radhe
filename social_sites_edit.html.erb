@@ -1,0 +1,40 @@
+<%#= javascript_include_tag "jquery_tooltip" %>
+<style>
+  .artist_table td{
+    padding-left:5px;
+  }
+  .enlarge_title{
+    color:white !important
+  }
+</style>
+<div id="content_bar">
+  <div class="leftCorner"></div>
+  <div class="content_bar" align="left">
+    <ul class="content_bar_ul">
+      <li class="priority_strip"><h3 class="enlarge_title"> <b>SOCIAL SITES</b> </h3></li>
+    </ul>
+  </div>
+  <div class="rightCorner"></div>
+</div>  
+<div class="main_content">
+<span class="blueStripBg accordian_strip member_tab_strip" style="padding-left:16px;">
+  <table width="100%">
+    <tr>
+      <td width="10%" align="left" >Artist</td>
+      <td width="10%" align="left" >Facebook</td>
+      <td width="10%" align="left" style="padding-left:0;">Bandcamp</td>
+      <td width="10%" align="left" style="padding-left:23px;">Soundcloud</td>
+      <td width="10%" align="left" ><span>Twitter</span></td>
+      <td width="10%" align="left" >Instagram</td>
+      <td width="10%" align="left" style="padding-left:0;">Youtube</td>
+      <td width="10%" align="left" style="padding-left:23px;">Spotify</td>
+      <td width="10%" align="left" style="padding-left:23px;">Vine</td>
+      <td width="10%" align="left" style="padding-left:23px;">Edit</td>
+    </tr>
+  </table>
+</span>  
+  <div class="edit box" style="margin-top:0px !important;">
+  <%= render :partial => 'admin_edit_social_sites' %>
+</div>
+
+ 

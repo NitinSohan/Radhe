@@ -1,0 +1,22 @@
+<div>
+	<span >
+		<table width="100%">
+			<%  @channel.each do |site| %>
+				<tr>
+					<% if site.youtube_channel? %>
+						<th width="25%"><a target="_blank", href="https://www.youtube.com/user/thekingfantastic" ><img height = "64px" width="64px"  src="/images/0313/youtube-color.png" alt="facebook"></th>
+					<% else %>
+						<th width="70%"><img height = "64px" width="64px"  src="/images/0313/youtube-gray.png" alt="facebook"></a></th>
+					<% end %>		
+					<th style="color:#8C8C8C",width="45%"><%= site.youtube_channel %></th>
+					<th width="5%"><a href="youtube_sites_edit/<%= site.id %>" ><button type="button">Edit</button></a></th>
+				<!--	<th width="10%"><%= link_to '<button type="button">Edit</button>'.html_safe, {:controller => :social_sites, :action => :edit}, {:method => :put } %></th>-->
+				</tr>
+			<% end %>
+		</table>
+	</span>
+</div>
+<div>
+<div class="page_numbers"><%= will_paginate(@channel,:params=> {:search=>params[:search]})%></div>
+<%= link_to '<button type="button">Back</button>'.html_safe, {:controller => :admin, :action => :social_sites} %>
+</div>
